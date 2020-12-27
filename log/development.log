@@ -1,0 +1,777 @@
+  [1m[35m (316.7ms)[0m  [1m[35mCREATE DATABASE "change_api2_development" ENCODING = 'unicode'[0m
+  [1m[35m (370.5ms)[0m  [1m[35mCREATE DATABASE "change_api2_test" ENCODING = 'unicode'[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5977856271991058280)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOpps (20201227003403)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "opps" ("id" bigserial primary key, "title" character varying, "opp_type" character varying, "opp_description" character varying, "more_info" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201227003403"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-27 00:34:30.958542"], ["updated_at", "2020-12-27 00:34:30.958542"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5977856271991058280)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOpp Create (1.8ms)[0m  [1m[32mINSERT INTO "opps" ("title", "opp_type", "opp_description", "more_info", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["opp_type", "Saw Gerrera"], ["opp_description", "The garbage'll do"], ["more_info", "375-720-0659"], ["created_at", "2020-12-27 00:37:03.684508"], ["updated_at", "2020-12-27 00:37:03.684508"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOpp Create (0.2ms)[0m  [1m[32mINSERT INTO "opps" ("title", "opp_type", "opp_description", "more_info", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["opp_type", "Finn"], ["opp_description", "You need a teacher. I can show you the ways of the Force."], ["more_info", "1-797-030-9486"], ["created_at", "2020-12-27 00:37:03.692011"], ["updated_at", "2020-12-27 00:37:03.692011"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOpp Create (0.2ms)[0m  [1m[32mINSERT INTO "opps" ("title", "opp_type", "opp_description", "more_info", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Wow, Bob, wow."], ["opp_type", "Captain Phasma"], ["opp_description", "Suicide is not the Jedi way, Master."], ["more_info", "1-127-361-9523"], ["created_at", "2020-12-27 00:37:03.694625"], ["updated_at", "2020-12-27 00:37:03.694625"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOpp Create (0.2ms)[0m  [1m[32mINSERT INTO "opps" ("title", "opp_type", "opp_description", "more_info", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["opp_type", "Saw Gerrera"], ["opp_description", "She may not look like much, but she's got it where it counts, kid."], ["more_info", "1-422-362-9506"], ["created_at", "2020-12-27 00:37:03.697004"], ["updated_at", "2020-12-27 00:37:03.697004"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOpp Create (0.2ms)[0m  [1m[32mINSERT INTO "opps" ("title", "opp_type", "opp_description", "more_info", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["opp_type", "Jar Jar Binks"], ["opp_description", "We have no choice, General Calrissian! Our cruisers can't repel firepower of that magnitude!"], ["more_info", "1-504-628-9448"], ["created_at", "2020-12-27 00:37:03.699320"], ["updated_at", "2020-12-27 00:37:03.699320"]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/opps" for ::1 at 2020-12-26 19:37:29 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OppsController#index as HTML
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 8.1ms | Allocations: 5922)
+
+
+Started GET "/service-worker.js" for ::1 at 2020-12-26 19:37:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/service-worker.js" for ::1 at 2020-12-26 19:38:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-12-26 19:53:15 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/owner/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/owner/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/railties-6.0.3.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.0ms | Allocations: 399)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 2169)
+
+
+Started GET "/service-worker.js" for ::1 at 2020-12-26 19:53:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opps" for ::1 at 2020-12-26 19:53:22 -0500
+Processing by OppsController#index as HTML
+  [1m[36mOpp Load (3.1ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 59ms (Views: 35.7ms | ActiveRecord: 20.6ms | Allocations: 5930)
+
+
+Started GET "/service-worker.js" for ::1 at 2020-12-26 19:53:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/service-worker.js" for ::1 at 2020-12-26 19:53:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opps" for ::1 at 2020-12-26 20:00:49 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.1ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 1.1ms | Allocations: 1577)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:03:57 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.8ms | Allocations: 1522)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:04:14 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:06:52 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (2.4ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 2.4ms | Allocations: 1521)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:07:17 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:07:33 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:07:41 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.9ms | Allocations: 1521)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:08:04 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:08:22 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.5ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:08:28 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.4ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:08:35 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:08:43 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.2ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 1.2ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:09:06 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:09:37 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:09:52 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:10:18 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:10:45 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.2ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.2ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:11:16 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:11:29 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (2.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 2.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:11:38 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:11:48 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:11:53 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:12:21 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (2.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 2.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:12:43 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:13:00 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (3.4ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 3.4ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:13:27 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (5.1ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 5.1ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:37:29 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.2ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.2ms | Allocations: 1577)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:41:36 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:42:29 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.4ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.4ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:42:34 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:42:38 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.6ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:44:39 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.6ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:44:59 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.1ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.1ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:45:09 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:45:12 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:45:20 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.0ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 1.0ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:45:22 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:45:26 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:47:23 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:47:41 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:47:50 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.5ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:48:05 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:48:38 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:49:02 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:49:04 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:49:31 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:58:24 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 1577)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:58:44 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.5ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 20:58:55 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:07:03 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.2ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.2ms | Allocations: 1577)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:10:25 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:11:43 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.5ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 1.5ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:12:00 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 1.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:12:05 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:12:17 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:12:33 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:21:07 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.3ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.3ms | Allocations: 1577)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:21:19 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.7ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:23:41 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:23:53 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.0ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.0ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:25:34 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:25:40 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:32:42 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.9ms | Allocations: 1577)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:33:01 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:34:10 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:34:34 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (2.2ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 2.2ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:34:41 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.2ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.2ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-26 21:36:51 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (3.1ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 3.1ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 10:58:45 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (1.4ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.4ms | Allocations: 1578)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:00:23 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:02:07 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:02:17 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:03:33 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:03:50 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:08:22 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.7ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:11:00 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:13:11 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.5ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:13:15 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.8ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:13:23 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:14:00 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.9ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:14:03 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.8ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 1504)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:14:53 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.5ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:14:58 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (0.6ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/opps" for ::1 at 2020-12-27 11:15:31 -0500
+Processing by OppsController#index as */*
+  [1m[36mOpp Load (2.0ms)[0m  [1m[34mSELECT "opps".* FROM "opps"[0m
+  ↳ app/controllers/opps_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 2.0ms | Allocations: 1503)
+
+
